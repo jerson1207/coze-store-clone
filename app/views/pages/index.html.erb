@@ -1,0 +1,38 @@
+<section>
+  <!-- Hero Section -->
+  <div class="relative min-h-screen hero-page">
+    <div class="w-[60%] m-auto absolute inset-0 flex flex-col justify-center z-10">
+      <h6 class="text-4xl font-bold mb-4">Women Collection</h6>
+      <h3 class="text-8xl mb-6">New Season</h3>
+      <button class="w-48 px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition">
+        Shop Now
+      </button>
+    </div>
+
+    <%= image_tag("slider/slide-01.jpg", class: "absolute inset-0 w-full h-full object-cover") %>
+  </div>
+
+  <!-- banner -->
+  <div class='banner my-20'>
+    <div class='container m-auto flex gap-5'>
+      <%= render partial: "banner_item", locals: { image: "banner/banner-01.jpg", title: "Women", subtitle: "Spring Collection" } %>
+      <%= render partial: "banner_item", locals: { image: "banner/banner-02.jpg", title: "Men", subtitle: "Winter Collection" } %>
+      <%= render partial: "banner_item", locals: { image: "banner/banner-03.jpg", title: "Shoes", subtitle: "Latest Styles" } %>
+    </div>
+  </div>
+
+  <!-- products -->
+  <div class='container m-auto'>
+    <h1 class='text-4xl'>Product Overview</h1>
+    <div data-controller="category-tabs">
+      <%= render partial: "category_buttons" %>
+    </div>
+
+    <!-- Products Grid -->
+    <ul class="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+      <% @products.each do |product| %>
+        <%= render partial: "product_card", locals: { product: product } %>
+      <% end %>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<!-- _product_card.html.erb -->
+<li class="product-item" data-product-id="<%= product.id %>" data-category-ids="<%= product.categories.pluck(:id).join(',') %>">
+  <div class='card rounded-sm overflow-hidden relative group'>
+    <!-- Card Image Section with Hover Trigger -->
+    <div class='w-full h-[364px] bg-gray-300 relative group-hover:opacity-75'>
+      <!-- You can replace this with actual product image later -->
+      <!-- Quick View Button -->
+      <button
+        class="absolute bottom-5 left-1/2 transform -translate-x-1/2 translate-y-10 opacity-0 bg-white hover:bg-black hover:text-[#ddd] text-gray-500 px-4 py-2 rounded-2xl transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+      >
+        Quick View
+      </button>
+    </div>
+
+    <div class='mt-2'>
+      <h3 class="text-gray-600"><%= product.name %></h3>
+      <p class="font-semibold text-gray-600"><%= number_to_currency(product.price, unit: "₱") %></p>
+    </div>
+  </div>
+</li>

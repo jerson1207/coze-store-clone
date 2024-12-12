@@ -1,0 +1,4 @@
+<button data-action="click->category-tabs#filterAll" class="button-base active" data-category-tabs-target="allButton">All Products</button>
+<% @categories.each do |category| %>
+  <button data-action="click->category-tabs#filterCategory" data-category-id="<%= category[0] %>" class="button-base"><%= category[1] %></button>
+<% end %>

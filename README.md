@@ -1,24 +1,9 @@
-# README
+## Ruby on Rails Environment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is built using the following versions:
 
-Things you may want to cover:
+- **Rails**: 8.0.0.1  
+- **Rack**: 3.1.8  
+- **Ruby**: 3.3.0 (2023-12-25, revision 5124f9ac75) [x86_64-linux]  
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Ensure your environment matches these versions for compatibility and smooth development.
