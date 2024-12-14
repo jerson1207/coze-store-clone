@@ -25,3 +25,24 @@ Product.destroy_all
   # Improved logging for better readability
   puts "#{product_name} has been created with categories: #{category_ids.join(', ')}"
 end
+
+puts "Destroying all users..."
+User.destroy_all
+
+5.times do |i|
+  User.create!(
+    email: "user#{i+1}@test.com",
+    password: "qwerty",
+    password_confirmation: "qwerty"
+  )
+end
+
+puts "Destroying all favorites..."
+Favorite.destroy_all
+
+# Assigning random favorites
+User.all.each do |user|
+  favorited_products = Product.all.sample(rand(2..5)) # Randomly select 2 to 5 products
+  user.favorited_products << favorited_products
+  puts "User #{user.email} has favorited products: #{favorited_products.map(&:name).join(', ')}"
+end

@@ -16,16 +16,28 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
   </head>
 
   <body>
+    <div class='container mx-auto'>
+      <% unless @skip_header_footer %>
+        <%= render "layouts/header" %>
+      <% end %>
+    </div>
+
     <%= yield %>
 
-    <%= render "layouts/footer" %>
+    <% unless @skip_header_footer %>
+      <%= render "layouts/footer" %>
+    <% end %>
   </body>
 </html>

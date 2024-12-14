@@ -13,7 +13,23 @@
     </div>
 
     <div class='mt-2'>
-      <h3 class="text-gray-600"><%= product.name %></h3>
+      <div class='flex justify-between items-center'>
+        <h3 class="text-gray-600"><%= product.name %></h3>
+        <!-- Heart Icon with Stimulus data-controller and action -->
+
+        <% if user_signed_in? %>
+          <div id="favorite-<%= product.id %>">
+            <i 
+              data-controller="favorite" 
+              data-action="click->favorite#toggleFavorite" 
+              data-favorite-product-id-value="<%= product.id %>"
+              class="<%= @favorite_products.include?(product.id) ? 'fa-solid' : 'fa-regular' %> fa-heart cursor-pointer">
+            </i>
+          </div>
+        <% else %>
+          <i class="fa-regular fa-heart"></i>
+        <% end %>
+      </div>
       <p class="font-semibold text-gray-600"><%= number_to_currency(product.price, unit: "₱") %></p>
     </div>
   </div>
