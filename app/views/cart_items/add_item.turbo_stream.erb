@@ -1,0 +1,6 @@
+<%= turbo_stream.send(@action, @action == "append" ? "cart-items" : "cart-item-#{@cart_item.id}") do %>
+  <%= render "carts/cart_item", cart_item: @cart_item %>
+<% end %>
+
+<%= turbo_stream.update("flash", partial: "layouts/flash") %>
+

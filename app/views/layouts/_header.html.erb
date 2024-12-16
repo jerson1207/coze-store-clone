@@ -47,7 +47,7 @@
             <% end %>
           </div>
           <div class="flex flex-col items-center justify-center gap-0.5 cursor-pointer">
-            <div class="relative">
+            <%= link_to cart_path, class: "relative" do %>
               <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" class="cursor-pointer fill-[#333] inline"
                 viewBox="0 0 512 512">
                 <path
@@ -55,7 +55,7 @@
                   data-original="#000000"></path>
               </svg>
               <span class="absolute left-auto -ml-1 top-0 rounded-full bg-red-500 px-1 py-0 text-xs text-white">0</span>
-            </div>
+            <% end %>
             <span class="text-[13px] font-semibold text-[#333]">Cart</span>
           </div>
 

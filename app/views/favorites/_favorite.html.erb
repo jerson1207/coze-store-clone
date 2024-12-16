@@ -14,7 +14,11 @@
   <img src="https://via.placeholder.com/400x300.png?text=Product+Image" alt="<%= product.name %>" class="w-full h-48 object-cover rounded-md mb-4" />
 
   <!-- Add more product details or action buttons -->
-  <div class="flex justify-between items-center">
-    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Add to cart</button>
+  <div class="flex justify-end items-center">
+    <%= button_to "Add to cart", add_item_cart_items_path(product.id), 
+              method: :post, 
+              class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600", 
+              data: { turbo: "true" } %>
+
   </div>
 </div>

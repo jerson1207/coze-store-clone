@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
   def set_layout_flag
-    @skip_header_footer = [ "favorites" ].include?(controller_name)
+    # @skip_header_footer = [ "favorites" ].include?(controller_name)
   end
 
   protected

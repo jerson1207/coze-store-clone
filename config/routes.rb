@@ -17,4 +17,8 @@ Rails.application.routes.draw do
 
   post "favorites/:product_id/toggle", to: "favorites#toggle", as: "toggle_favorite"
   resources :favorites, only: [ :index, :destroy ]
+
+  get "/cart", to: "carts#show", as: :cart
+  post "cart_items/:product_id/add_item", to: "cart_items#add_item", as: "add_item_cart_items"
+  delete "cart_items/:id/remove_item", to: "cart_items#remove_item", as: "remove_item_cart_items"
 end
