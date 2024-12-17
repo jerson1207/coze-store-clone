@@ -15,7 +15,7 @@
 
   <!-- Add more product details or action buttons -->
   <div class="flex justify-end items-center">
-    <%= button_to "Add to cart", add_item_cart_items_path(product.id), 
+    <%= button_to "Add to cart", add_item_from_favorites_cart_items_path(product.id), 
               method: :post, 
               class: "bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600", 
               data: { turbo: "true" } %>

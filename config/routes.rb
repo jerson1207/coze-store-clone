@@ -20,5 +20,7 @@ Rails.application.routes.draw do
 
   get "/cart", to: "carts#show", as: :cart
   post "cart_items/:product_id/add_item", to: "cart_items#add_item", as: "add_item_cart_items"
+  post "cart_items/:product_id/add_item_from_favorites", to: "cart_items#add_item_from_favorites", as: "add_item_from_favorites_cart_items"
+
   delete "cart_items/:id/remove_item", to: "cart_items#remove_item", as: "remove_item_cart_items"
 end

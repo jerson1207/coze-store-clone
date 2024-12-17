@@ -1,0 +1,17 @@
+<% if @action == "append" %>
+  <%= turbo_stream.append("cart-items") do %>
+    <%= render "carts/cart_item", cart_item: @cart_item %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.replace("cart-item-#{@cart_item.id}") do %>
+    <%= render "carts/cart_item", cart_item: @cart_item %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.update("flash", partial: "layouts/flash") %>
+
+<% unless current_user.favorites.blank? %>
+  <%= turbo_stream.remove("favorite_#{@favorited_product.product_id}") %>
+<% else %>
+  <%= turbo_stream.replace("favorites", partial: "favorites/no_favorites") %>
+<% end %>
